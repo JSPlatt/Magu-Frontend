@@ -1,9 +1,16 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
-function Store() {
+const Store = (props) => {
+    const[store, setStore] = useState([])
+    const [review, setReview] = useState ([])
+    
+
+    useEffect(() => {
+        console.log(props)
+    }, [])
     return (
         <div>
-            
+            This is the singular store index
         </div>
     )
 }
