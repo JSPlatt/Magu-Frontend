@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 
 const Store = (props) => {
     const[store, setStore] = useState([])
-    const [review, setReview] = useState ([])
+    const [reviews, setReviews] = useState ([])
     
     useEffect(() => {
             const id = props.match.params.store_id
@@ -11,10 +11,9 @@ const Store = (props) => {
 
         fetch(url)
             .then(res => res.json())
-            .then (data => console.log(data))
-            
-
-        
+            .then (reviewArray => {
+                setReviews(reviewArray)
+            })
     }, [])
 
    
