@@ -39,15 +39,14 @@ const LinkWrapper = styled.div`
   }
 `
 
-
 function StoreCard(props) {
     return (
         <Card>
             <StoreLogo>
-                <img src="https://cdn4.vectorstock.com/i/1000x1000/36/33/marijuana-leaf-logo-icon-design-element-template-vector-21133633.jpg" alt={props.name}></img>
+                <img src={props.logo} alt={props.name}></img>
             </StoreLogo>
             <StoreName>{props.name}</StoreName>
-            <div className="store-score">{props.score}</div>
+            <div className="store-score">3</div>
             <LinkWrapper>
                 <Link to={`/stores/${props.slug}`}>View Dispensary</Link>
             </LinkWrapper>
