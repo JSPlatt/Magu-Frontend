@@ -18,6 +18,7 @@ const RatingBox = styled.div`
     justify-content: center;
     flex-direction: row-reverse;
     position: relative;
+    margin-top: 12px;
 
     input {
         display: none;
@@ -43,16 +44,73 @@ const RatingBox = styled.div`
         background-image: url("data:image/svg+xml; charset=UTF-8, ${Hover}");
     }
 `
-const RatingTitle = styled.div``
+const Field = styled.div`
+    border-radius: 4px;
 
-function ReviewForm({ handleChange, onAddReview }) {
+    input {
+        min-height: 50px;
+        border-radius: 4px;
+        border: 1px solid #e6e6e6;
+        margin: 0 0 12px 0;
+        padding: 12px;
+        width: 96%;
+    }
+
+    textarea {
+        width: 100%;
+        min-height: 80px;
+        border-radius: 4px;
+        border: 1px solid #e6e6e6;
+        margin: 12px 0;
+        padding: 12px;
+    }
+`
+const Wrapper = styled.div`
+    background: #fff;
+    padding: 20px;
+    background: #000;
+    height: 100vh;
+    padding-top: 100px;
+`
+const SubmitBtn = styled.button`
+    color: #fff;
+    background: #333;
+    border-radius: 4px;
+    padding: 12px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: ease-in-out 0.1s;
+    border: 1px solid #fff;
+    width: 100%;
+    margin-top: 20px;
+
+    &:hover {
+        background: #fff;
+        color: #000;
+        border: 1px solid #fff;
+    }
+
+`
+const Headline = styled.div`
+    padding: 20px;
+    font-size: 30px;
+    color: #fff;
+    font-weight: bold;
+`
+const RatingTitle = styled.div`
+    font-size: 20px;
+    padding-bottom: 20px;
+    font-weight: bold;
+`
+
+function ReviewForm({ handleChange, onAddReview , setRating}) {
     const [title, setTitle] = useState("")
     const [description, setDescription] =useState("")
     const ratingOptions = [5, 4, 3, 2, 1].map ( (score,index ) => {
         return (
         <Fragment>
-            <input type="radio" value={score} name="rating" onChange={() => console.log('selected:', score)} id={`rating-${score}`}/>
-            <label></label>
+            <input type="radio" value={score} checked="" name="rating" onChange={() => console.log('selected:', score)} id={`rating-${score}`}/>
+            <label></label> 
         </Fragment>
         )
     })
@@ -80,26 +138,26 @@ function ReviewForm({ handleChange, onAddReview }) {
     
     
     return (
-        <div className="wrapper">
+        <Wrapper>
             <form onSubmit={handleSubmit}>
-                <div>Have you visited us? Leave a review!</div>
-                <div className="field">
+                <Headline>Have you visited us? Leave a review!</Headline>
+                <Field>
                     <input onChange={(e) => setTitle(e.target.value)} value={title} type="text" name="title" placeholder="Review Title"/>
-                </div>
-                <div className="field">
+                </Field>
+                <Field>
                     <input onChange={(e) => setDescription(e.target.value)} value={description} type="text" name="description" placeholder="Review Description"/>
-                </div>
-                <div className="field">
+                </Field>
+                <Field>
                     <RatingContainer>
-                        <div className="rating-title-text">Rate This Dispensary</div>
+                        <RatingTitle>Rate This Dispensary</RatingTitle>
                         <RatingBox>
                         {ratingOptions}  
                         </RatingBox>
                     </RatingContainer>
-                </div>
-                <button type="submit">Submit Your Review!</button>
+                </Field>
+                <SubmitBtn type="submit">Submit Your Review!</SubmitBtn>
             </form>
-        </div>
+        </Wrapper>
     )
 }
 

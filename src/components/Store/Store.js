@@ -100,6 +100,10 @@ const reviewGrid = reviews.map( review => {
         )
     })
     
+    // const setRating = (score, e) => {
+    //     e.preventDefault()
+    //     debugger
+    // }
 
        return (
            <Wrapper>
@@ -114,6 +118,7 @@ const reviewGrid = reviews.map( review => {
                <Column>
                    <ReviewForm
                         onAddReview={handleAddReview}   
+                        // setRating={setRating}
                     />
                </Column>
            </Wrapper>
