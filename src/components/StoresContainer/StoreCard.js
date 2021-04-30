@@ -39,16 +39,16 @@ const LinkWrapper = styled.div`
   }
 `
 
-function StoreCard(props) {
+function StoreCard(store) {
     return (
         <Card>
             <StoreLogo>
-                <img src={props.logo} alt={props.name}></img>
+                <img src={store.logo} alt={store.name}></img>
             </StoreLogo>
-            <StoreName>{props.name}</StoreName>
+            <StoreName>{store.name}</StoreName>
             <div className="store-score">3</div>
             <LinkWrapper>
-                <Link to={`/stores/${props.slug}`}>View Dispensary</Link>
+                <Link to={`/stores/${store.slug}`}>View Dispensary</Link>
             </LinkWrapper>
         </Card>
     )
