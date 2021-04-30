@@ -75,11 +75,17 @@ const handleChange = (e) => {
     e.preventDefault()
 }
 
+
 function handleAddReview(newReview) {
     const updatedReviewArray = [ newReview, ...reviews]
     setReviews(updatedReviewArray)
 }
 
+function handleDeleteReview(id) {
+    const updatedReviewArray = reviews.filter(reviews => reviews.id !== id)
+    setReviews(updatedReviewArray)
+    
+}
 
 const reviewGrid = reviews.map( review => {
     return(
@@ -88,6 +94,7 @@ const reviewGrid = reviews.map( review => {
         key={review.id}
         title={review.title}
         description={review.description}
+        onDeleteReview={handleDeleteReview}
         />
         
         )
