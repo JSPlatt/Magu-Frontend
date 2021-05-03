@@ -1,5 +1,6 @@
 import React, { useState, useEffect, div } from 'react'
 import StoreCard from './StoreCard'
+import Store from '../Store/Store'
 import styled from 'styled-components'
 
 const Home = styled.div `
@@ -50,7 +51,9 @@ function StoresContainer() {
                 logo={store.image_url}
             />
         )
+        
     })
+    
 
     return (
     <Home className="home">

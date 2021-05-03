@@ -68,13 +68,13 @@ const Field = styled.div`
 const Wrapper = styled.div`
     background: #fff;
     padding: 20px;
-    background: #000;
+    background: #0D6C0D;
     height: 100vh;
     padding-top: 100px;
 `
 const SubmitBtn = styled.button`
     color: #fff;
-    background: #333;
+    background: #318231;
     border-radius: 4px;
     padding: 12px;
     font-size: 18px;
@@ -106,10 +106,11 @@ const RatingTitle = styled.div`
 function ReviewForm({ handleChange, onAddReview , setRating}) {
     const [title, setTitle] = useState("")
     const [description, setDescription] =useState("")
+    const [score, setScore] =useState(0)
     const ratingOptions = [5, 4, 3, 2, 1].map ( (score,index ) => {
         return (
         <Fragment>
-            <input type="radio" value={score} checked="" name="rating" onChange={() => console.log('selected:', score)} id={`rating-${score}`}/>
+            <input type="radio" value= {score} checked="" name="rating" onChange={() => console.log('selected:', score)} id={`rating-${score}`}/>
             <label></label> 
         </Fragment>
         )
@@ -125,6 +126,7 @@ function ReviewForm({ handleChange, onAddReview , setRating}) {
             body: JSON.stringify({
                 title: title,
                 description: description,
+                score: score,
                 store_id: 1
             })
         })
@@ -135,7 +137,7 @@ function ReviewForm({ handleChange, onAddReview , setRating}) {
             setTitle('')
             setDescription('')
     }
-    
+        
     
     return (
         <Wrapper>

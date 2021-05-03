@@ -36,33 +36,15 @@ const Column = styled.div`
 
 const Main = styled.div`
     padding-left: 50px;`
-// const Home = styled.div `
-//   text-align: center;
-//   margin-left: auto;
-//   margin-right: auto;
-//   max-width: 1200px;
-// `
-// const Subheader = styled.div `
-//   font-weight:300;
-//   font-size: 26px;
-// `
-// const Grid = styled.div `
-//   display: grid;
-//   grid-template-columns: repeat(4, 1fr);
-//   grid-gap: 20px;
-//   width: 100%;
-//   padding: 20px;
-// `
 
 
 const Store = (props) => {
   
     const [reviews, setReviews] = useState ([])
-    
+
     useEffect(() => {
         
         const url = `http://localhost:3001/reviews/`
-
         fetch((url))
             .then(res => res.json())
             .then (reviewArray => {
@@ -93,6 +75,7 @@ const reviewGrid = reviews.map( review => {
         review={review}
         key={review.id}
         title={review.title}
+        score={review.score}
         description={review.description}
         onDeleteReview={handleDeleteReview}
         />
@@ -110,7 +93,7 @@ const reviewGrid = reviews.map( review => {
                <Column>
                    <Main>
                        <Header />
-                        <img src="https://www.preparedfoods.com/ext/resources/images/2019/07/Curaleaf-logo_web.jpg?1564417088" alt="Logo"/>
+                        <img src={"https://www.preparedfoods.com/ext/resources/images/2019/07/Curaleaf-logo_web.jpg?1564417088"} alt="Logo"/>
                         <h1>curaleaf</h1>
                        <div className="reviews">{reviewGrid}</div>
                    </Main>
