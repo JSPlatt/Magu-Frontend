@@ -83,18 +83,37 @@ const reviewGrid = reviews.map( review => {
         )
     })
     
+    const LogOutBtn = styled.button`
+    color: #fff;
+    background: #318231;
+    border-radius: 4px;
+    padding: 12px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: ease-in-out 0.1s;
+    border: 1px solid #fff;
+    width: 15%;
+    margin-top: 0 px;
+
+    &:hover {
+        background: #fff;
+        color: #000;
+        border: 1px solid #fff;
+    }`
     // const setRating = (score, e); e => {
     //     e.preventDefault()  
     //     setReviews({ ...reviews, score })
     //   }
 
+    
        return (
            <Wrapper>
                <Column>
+               <LogOutBtn>Log Out</LogOutBtn>
                    <Main>
-                       <Header />
+                       <Header/>
                         <img src={"https://www.preparedfoods.com/ext/resources/images/2019/07/Curaleaf-logo_web.jpg?1564417088"} alt="Logo"/>
-                        <h1>curaleaf</h1>
+                        <h1>View our Menu</h1>
                        <div className="reviews">{reviewGrid}</div>
                    </Main>
                </Column>

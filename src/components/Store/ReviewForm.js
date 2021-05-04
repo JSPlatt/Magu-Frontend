@@ -107,13 +107,14 @@ function ReviewForm({ handleChange, onAddReview , setRating}, props) {
     const [title, setTitle] = useState("")
     const [description, setDescription] =useState("")
     const [score, setScore] =useState(0)
-    const [storeId, setStoreId] = useState(true)
+    
 
     const ratingOptions = [5, 4, 3, 2, 1].map ( (score,index ) => {
+        
         return (
         <Fragment>
             <input key={index} type="radio" value= {score} checked={score === score} name="rating" onChange={() => console.log('selected:', score)} id={`rating-${score}`}/>
-            <label onClick={setScore}></label> 
+            <label></label> 
         </Fragment>
         )
     })

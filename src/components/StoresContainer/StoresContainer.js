@@ -60,7 +60,9 @@ function StoresContainer() {
     // })
 
     const grid = stores.map( store => {
-        
+        <Store 
+            logo={store.image_url}
+        />
         return(
             <StoreCard 
                 key={store.name}
