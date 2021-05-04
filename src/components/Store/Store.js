@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom'
 import StoreReview from './StoreReview'
 import styled from 'styled-components'
 import ReviewForm from './ReviewForm'
+import { BrowserRouter as Router, Link } from 'react-router-dom'
 
 const Header = styled.div `
   padding: 100px 100px 10px 100px;
@@ -39,6 +40,20 @@ const Main = styled.div`
     padding-left: 50px;`
 
 
+const LinkWrapper = styled.div`
+  margin: 30px 0 20px 0;
+  height: 50px;
+
+  a {
+      color: #fff;
+      background: #318231;
+      border-radius: 4px;
+      padding: 10px 50px;
+      border: 1px solid #000;
+      width: 100%;
+      text-decoration: none;
+  }`
+
 const Store = (props) => {
   
     const [reviews, setReviews] = useState ([])
@@ -54,10 +69,6 @@ const Store = (props) => {
             })
     }, [])
 
-const handleChange = (e) => {
-    e.preventDefault()
-}
-
 
 function handleAddReview(newReview) {
     const updatedReviewArray = [ newReview, ...reviews]
@@ -69,14 +80,14 @@ function handleDeleteReview(id) {
     setReviews(updatedReviewArray)
     
 }
-////////
+
 const history = useHistory ()
 function logOut()
 {
     localStorage.clear()
     history.push('../login')
 }
-//////////
+
 const reviewGrid = reviews.map( review => {
     return(
         <StoreReview
@@ -121,7 +132,9 @@ const reviewGrid = reviews.map( review => {
                    <Main>
                        <Header/>
                         <img src={"https://www.preparedfoods.com/ext/resources/images/2019/07/Curaleaf-logo_web.jpg?1564417088"} alt="Logo"/>
-                        <h1>View our Menu</h1>
+                       <LinkWrapper>
+                            <Link to={`/menu`}>View Our Menu</Link>
+                        </LinkWrapper> 
                        <div className="reviews">{reviewGrid}</div>
                    </Main>
                </Column>

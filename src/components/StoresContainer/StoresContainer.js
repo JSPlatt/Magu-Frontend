@@ -1,4 +1,4 @@
-import React, { useState, useEffect, div } from 'react'
+import React, { useState, useEffect } from 'react'
 import StoreCard from './StoreCard'
 import Store from '../Store/Store'
 import styled from 'styled-components'
