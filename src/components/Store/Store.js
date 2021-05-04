@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { useHistory } from 'react-router-dom'
 import StoreReview from './StoreReview'
 import styled from 'styled-components'
 import ReviewForm from './ReviewForm'
@@ -68,7 +69,14 @@ function handleDeleteReview(id) {
     setReviews(updatedReviewArray)
     
 }
-
+////////
+const history = useHistory ()
+function logOut()
+{
+    localStorage.clear()
+    history.push('../login')
+}
+//////////
 const reviewGrid = reviews.map( review => {
     return(
         <StoreReview
@@ -109,7 +117,7 @@ const reviewGrid = reviews.map( review => {
        return (
            <Wrapper>
                <Column>
-               <LogOutBtn>Log Out</LogOutBtn>
+               <LogOutBtn onClick={logOut}>Log Out</LogOutBtn>
                    <Main>
                        <Header/>
                         <img src={"https://www.preparedfoods.com/ext/resources/images/2019/07/Curaleaf-logo_web.jpg?1564417088"} alt="Logo"/>
