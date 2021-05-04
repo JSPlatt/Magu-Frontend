@@ -21,6 +21,26 @@ const RatingContainer = styled.div`
 `
 const RatingScore = styled.div``
 
+const DeleteBtn = styled.button`
+    color: #fff;
+    background: #318231;
+    border-radius: 4px;
+    padding: 12px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: ease-in-out 0.1s;
+    border: 1px solid #fff;
+    width: 15%;
+    margin-top: 20px;
+
+    &:hover {
+        background: #fff;
+        color: #000;
+        border: 1px solid #fff;
+    }
+
+`
+
 
 function StoreReview({review, onDeleteReview}) {
 
@@ -43,7 +63,7 @@ function StoreReview({review, onDeleteReview}) {
             <div className="rating-score">
                 {/* <p>{review.score} out of 5</p> */}
             </div>
-            <button onClick={handleDelete}>Delete</button>
+            <DeleteBtn onClick={handleDelete}>Delete</DeleteBtn>
         </Card>
     
     )

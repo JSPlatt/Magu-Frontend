@@ -103,15 +103,17 @@ const RatingTitle = styled.div`
     font-weight: bold;
 `
 
-function ReviewForm({ handleChange, onAddReview , setRating}) {
+function ReviewForm({ handleChange, onAddReview , setRating}, props) {
     const [title, setTitle] = useState("")
     const [description, setDescription] =useState("")
     const [score, setScore] =useState(0)
+    const [storeId, setStoreId] = useState(true)
+
     const ratingOptions = [5, 4, 3, 2, 1].map ( (score,index ) => {
         return (
         <Fragment>
-            <input type="radio" value= {score} checked="" name="rating" onChange={() => console.log('selected:', score)} id={`rating-${score}`}/>
-            <label></label> 
+            <input key={index} type="radio" value= {score} checked={score === score} name="rating" onChange={() => console.log('selected:', score)} id={`rating-${score}`}/>
+            <label onClick={setScore}></label> 
         </Fragment>
         )
     })
@@ -127,7 +129,7 @@ function ReviewForm({ handleChange, onAddReview , setRating}) {
                 title: title,
                 description: description,
                 score: score,
-                store_id: 1
+                store_id: 1,
             })
         })
 

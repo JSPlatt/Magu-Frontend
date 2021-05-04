@@ -1,6 +1,7 @@
 import React from 'react'
 import { BrowserRouter as Router, Link } from 'react-router-dom'
 import styled from 'styled-components' 
+import ReviewForm from '../Store/ReviewForm'
 
 const Card = styled.div`
   border: 1px solid #efefef;
@@ -46,7 +47,7 @@ function StoreCard(store) {
                 <img src={store.logo} alt={store.name}></img>
             </StoreLogo>
             <StoreName>{store.name}</StoreName>
-            <div className="store-score">3</div>
+            <div className="store-score"></div>
             <LinkWrapper>
                 <Link to={`/stores/${store.slug}`}>View Dispensary</Link>
             </LinkWrapper>

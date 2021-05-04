@@ -83,10 +83,10 @@ const reviewGrid = reviews.map( review => {
         )
     })
     
-    // const setRating = (score, e) => {
-    //     e.preventDefault()
-    //     debugger
-    // }
+    // const setRating = (score, e); e => {
+    //     e.preventDefault()  
+    //     setReviews({ ...reviews, score })
+    //   }
 
        return (
            <Wrapper>
