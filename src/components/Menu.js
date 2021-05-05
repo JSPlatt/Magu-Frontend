@@ -26,6 +26,7 @@ const Subheader = styled.div `
     width: 60vh;
     border-radius: 100%;
     border: 5px solid #efefef;
+    margin-bottom: 60px;
   }
 `
 const Grid = styled.div `

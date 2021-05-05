@@ -5,6 +5,9 @@ const Card = styled.div`
   border: 1px solid #efefef;
   background: #fff;
   text-align: center;
+  box-shadow: 12px 0 12px 0 lightgray;
+  padding: 6px;
+  margin-bottom: 10px;
 `
 const ProductImage = styled.div`
   width: 50px;
@@ -22,6 +25,13 @@ const ProductImage = styled.div`
 `
 const ProductDescription = styled.div`
   padding: 20px 0 10px 0;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-weight: bold;
+  font-size: 17px;
+  color: black;
+  background: #fff;
 `
 const LinkWrapper = styled.div`
   margin: 30px 0 20px 0;
@@ -53,7 +63,7 @@ p {
 const ProductPrice = styled.div`
   font-family: Helvetica, Arial, sans-serif;
   font-size: 20px;
-  font-weight: bold;
+  font-weight: bolder;
 `
 
 
