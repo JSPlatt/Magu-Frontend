@@ -46,7 +46,7 @@ transition: ease-in-out 0.1s;
 border: 1px solid #fff;
 width: 8.75%;
 margin-top: 0 px;
-margin-left: -103px;
+margin-left: -223px;
 float: left;
 justify-content: flex-start;
 
@@ -70,22 +70,27 @@ function logOut()
 
 // const [products, setProducts] = useState([])
 
-    // useEffect(() => {
+//     useEffect(() => {
 
-    //     fetch('http://localhost:3001/products')
-    //         .then(r=> r.json())
-    //         .then(productArray => {
-    //             setProducts(productArray)
-    //         })
-    // }, [])
+//         fetch('http://localhost:3001/products')
+//             .then(r => r.json())
+//             .then(data => {
+//                 console.log(data)
+//             })
+//     }, [])
 
 
 // const productGrid = products.map( product => {
+    
+//     return(
 //     <ProductCard 
+//         product={product}
 //         key={product.id}
-//         type={product.type}
+//         image={product.image} 
+//         style={product.style}
 //         description={product.description}
 //     />
+//     )
 // })
 
 ////////////////  SETTING UP FOR BACKEND SEEDS  ////////////////
@@ -97,16 +102,6 @@ function logOut()
                 <Subheader><img src={"https://www.preparedfoods.com/ext/resources/images/2019/07/Curaleaf-logo_web.jpg?1564417088"} alt="logo"></img></Subheader>
             </Header>
             <Grid>
-                {/* {productGrid} */}
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
                 <ProductCard />
             </Grid>
         </Home>
