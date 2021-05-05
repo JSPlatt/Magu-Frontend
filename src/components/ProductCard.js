@@ -44,6 +44,7 @@ function ProductCard() {
             <StoreLogo>
                 <img src={"https://s3-us-west-1.amazonaws.com/dataowl-2/production/pictures/2308-a1f88dc93d61b76200b4663d1620195562869.jpg"} alt="logo"></img>
             </StoreLogo>
+            <p>Flower or Edible or Oil Oh my</p>
             <StoreName>[product description]</StoreName>
             <div className="store-score"></div>
         </Card>

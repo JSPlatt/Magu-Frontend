@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import ProductCard from './ProductCard'
 import { useHistory } from 'react-router-dom'
@@ -44,8 +44,9 @@ font-size: 15px;
 cursor: pointer;
 transition: ease-in-out 0.1s;
 border: 1px solid #fff;
-width: 15%;
+width: 8.75%;
 margin-top: 0 px;
+margin-left: -103px;
 float: left;
 justify-content: flex-start;
 
@@ -56,6 +57,7 @@ justify-content: flex-start;
 }`
 
 function Menu() {
+    
 
 const history = useHistory ()
 function logOut()
@@ -64,6 +66,30 @@ function logOut()
     history.push('../login')
 }
 
+////////////////  SETTING UP FOR BACKEND SEEDS  ////////////////
+
+// const [products, setProducts] = useState([])
+
+    // useEffect(() => {
+
+    //     fetch('http://localhost:3001/products')
+    //         .then(r=> r.json())
+    //         .then(productArray => {
+    //             setProducts(productArray)
+    //         })
+    // }, [])
+
+
+// const productGrid = products.map( product => {
+//     <ProductCard 
+//         key={product.id}
+//         type={product.type}
+//         description={product.description}
+//     />
+// })
+
+////////////////  SETTING UP FOR BACKEND SEEDS  ////////////////
+
     return (
         <Home className="home">
             <LogOutBtn onClick={logOut}>Log Out</LogOutBtn>
@@ -71,6 +97,7 @@ function logOut()
                 <Subheader><img src={"https://www.preparedfoods.com/ext/resources/images/2019/07/Curaleaf-logo_web.jpg?1564417088"} alt="logo"></img></Subheader>
             </Header>
             <Grid>
+                {/* {productGrid} */}
                 <ProductCard />
                 <ProductCard />
                 <ProductCard />
