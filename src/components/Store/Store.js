@@ -54,6 +54,24 @@ const LinkWrapper = styled.div`
       text-decoration: none;
   }`
 
+  const LogOutBtn = styled.button`
+    color: #fff;
+    background: #318231;
+    border-radius: 4px;
+    padding: 12px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: ease-in-out 0.1s;
+    border: 1px solid #fff;
+    width: 15%;
+    margin-top: 0 px;
+
+    &:hover {
+        background: #fff;
+        color: #000;
+        border: 1px solid #fff;
+    }`
+
 const Store = (props) => {
   
     const [reviews, setReviews] = useState ([])
@@ -65,7 +83,6 @@ const Store = (props) => {
             .then(res => res.json())
             .then (reviewArray => {
                 setReviews(reviewArray)
-                console.log(reviewArray)
             })
     }, [])
 
@@ -102,23 +119,7 @@ const reviewGrid = reviews.map( review => {
         )
     })
     
-    const LogOutBtn = styled.button`
-    color: #fff;
-    background: #318231;
-    border-radius: 4px;
-    padding: 12px;
-    font-size: 15px;
-    cursor: pointer;
-    transition: ease-in-out 0.1s;
-    border: 1px solid #fff;
-    width: 15%;
-    margin-top: 0 px;
-
-    &:hover {
-        background: #fff;
-        color: #000;
-        border: 1px solid #fff;
-    }`
+    
     // const setRating = (score, e); e => {
     //     e.preventDefault()  
     //     setReviews({ ...reviews, score })

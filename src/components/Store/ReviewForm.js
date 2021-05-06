@@ -4,6 +4,8 @@ import Gray from './Stars/Gray'
 import Hover from './Stars/Hover'
 import Selected from './Stars/Selected'
 
+
+
 const RatingContainer = styled.div`
     text-align: center;
     border-radius: 4px;
@@ -113,7 +115,7 @@ function ReviewForm({ handleChange, onAddReview , setRating}, props) {
         
         return (
         <Fragment>
-            <input key={index} type="radio" value= {score} checked={score === score} name="rating" onChange={() => console.log('selected:', score)} id={`rating-${score}`}/>
+            <input  key={index} type="radio" value= {score} checked={score === score} name="rating" onChange={() => console.log('selected:', score)} id={`rating-${score}`}/>
             <label></label> 
         </Fragment>
         )

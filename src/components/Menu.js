@@ -45,9 +45,9 @@ font-size: 15px;
 cursor: pointer;
 transition: ease-in-out 0.1s;
 border: 1px solid #fff;
-width: 8.75%;
+width: 11.1%;
 margin-top: 0 px;
-margin-left: -223px;
+margin-left: -295px;
 float: left;
 justify-content: flex-start;
 

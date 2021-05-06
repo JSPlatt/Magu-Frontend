@@ -9,7 +9,8 @@ const Card = styled.div`
 `
 const Description = styled.div`
     padding: 0 0 20px 0;
-    font-size: 14px;
+    font-size: 16px;
+    font-weight: medium;
 `
 const Title = styled.div`
     padding: 20px 0 0 0;
