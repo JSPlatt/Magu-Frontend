@@ -67,34 +67,32 @@ function logOut()
     history.push('../login')
 }
 
-////////////////  SETTING UP FOR BACKEND SEEDS  ////////////////
 
-// const [products, setProducts] = useState([])
+const [products, setProducts] = useState([])
 
-//     useEffect(() => {
+    useEffect(() => {
 
-//         fetch('http://localhost:3001/products')
-//             .then(r => r.json())
-//             .then(data => {
-//                 console.log(data)
-//             })
-//     }, [])
+        fetch('http://localhost:3001/products')
+            .then(r => r.json())
+            .then(productArray => {
+                setProducts(productArray)
+            })
+    }, [])
 
 
-// const productGrid = products.map( product => {
+const productGrid = products.map( product => {
     
-//     return(
-//     <ProductCard 
-//         product={product}
-//         key={product.id}
-//         image={product.image} 
-//         style={product.style}
-//         description={product.description}
-//     />
-//     )
-// })
-
-////////////////  SETTING UP FOR BACKEND SEEDS  ////////////////
+    return(
+    <ProductCard 
+        product={product}
+        key={product.id}
+        image={product.image} 
+        style={product.style}
+        price={product.price}
+        description={product.description}
+    />
+    )
+})
 
     return (
         <Home className="home">
@@ -103,7 +101,7 @@ function logOut()
                 <Subheader><img src={"https://www.preparedfoods.com/ext/resources/images/2019/07/Curaleaf-logo_web.jpg?1564417088"} alt="logo"></img></Subheader>
             </Header>
             <Grid>
-                <ProductCard />
+              {productGrid}
             </Grid>
         </Home>
         )
