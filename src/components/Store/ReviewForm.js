@@ -112,7 +112,7 @@ const RatingTitle = styled.div`
 function ReviewForm({ handleChange, onAddReview , setRating}, props) {
     const [title, setTitle] = useState("")
     const [description, setDescription] =useState("")
-    const [score, setScore] =useState(0)
+    const [score, setScore] =useState("")
     
 
     const ratingOptions = [5, 4, 3, 2, 1].map ( (score,index ) => {
@@ -145,6 +145,7 @@ function ReviewForm({ handleChange, onAddReview , setRating}, props) {
 
             setTitle('')
             setDescription('')
+            setScore('')
     }
         
     
@@ -153,18 +154,21 @@ function ReviewForm({ handleChange, onAddReview , setRating}, props) {
             <form onSubmit={handleSubmit}>
                 <Headline>Have you visited us? Leave a review!</Headline>
                 <Field>
-                    <input onChange={(e) => setTitle(e.target.value)} value={title} type="text" name="title" placeholder="Review Title"/>
+                    <input onChange={(e) => setTitle(e.target.value)} value={title} type="text" name="title" placeholder="Review Title" required/>
                 </Field>
                 <Field>
-                    <input onChange={(e) => setDescription(e.target.value)} value={description} type="text" name="description" placeholder="Review Description"/>
+                    <input onChange={(e) => setDescription(e.target.value)} value={description} type="text" name="description" placeholder="Review Description" required/>
                 </Field>
                 <Field>
-                    <RatingContainer>
+                    <input onChange={(e) => setScore(e.target.value)} value={score} type="number" name="score" placeholder="Review Score" min="1" max="5" required/>
+                </Field>
+                <Field>
+                    {/* <RatingContainer>
                         <RatingTitle>Rate This Dispensary</RatingTitle>
                         <RatingBox>
                         {ratingOptions}  
                         </RatingBox>
-                    </RatingContainer>
+                    </RatingContainer> */}
                 </Field>
                 <SubmitBtn type="submit">Submit Your Review!</SubmitBtn>
             </form>

@@ -16,11 +16,14 @@ const Title = styled.div`
     padding: 20px 0 0 0;
     font-size: 18px;
 `
-const RatingContainer = styled.div`
+
+const RatingScore = styled.div`
     display: flex;
-    flex-direction: row;
+    font-size: 25px;
+    font-weight: bold;
+    width: 15%;
+    
 `
-const RatingScore = styled.div``
 
 const DeleteBtn = styled.button`
     color: #fff;
@@ -61,9 +64,9 @@ function StoreReview({review, onDeleteReview}) {
             <Description>
                 <p>{review.description}</p>
             </Description>
-            <div className="rating-score">
-                {/* <p>{review.score} out of 5</p> */}
-            </div>
+            <RatingScore>
+                <p>{review.score} out of 5</p> 
+            </RatingScore>
             <DeleteBtn onClick={handleDelete}>Delete</DeleteBtn>
         </Card>
     

@@ -25,7 +25,7 @@ class Login extends Component {
   login = event => {
     let user_id = this.state.loginParams.user_id;
     let user_password = this.state.loginParams.user_password;
-    if (user_id === "jeff" && user_password === "123") {
+    if (user_id === "Magu" && user_password === "123") {
       localStorage.setItem("token", "T");
       this.setState({
         islogged: true
