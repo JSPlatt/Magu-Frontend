@@ -30,21 +30,23 @@ const RatingBox = styled.div`
         cursor: pointer;
         width: 40px;
         height: 40px;
-        background-image: url("data:image/svg+xml; charset=UTF-8, ${Gray}");
+        background-image: url("data:image/svg+xml; charset=UTF-8, ${Selected}");
+        /* background-image: url("data:image/svg+xml; charset=UTF-8, ${Gray}"); */
+        /* background-image: url("data:image/svg+xml; charset=UTF-8, ${Hover}"); */
         background-repeat: no-repeat;
         background-position: center;
         background-size: 70%;
     }
 
-    input:checked ~ label,
+    /* input:checked ~ label,
     input:checked ~ label ~ label {
         background-image: url("data:image/svg+xml; charset=UTF-8, ${Selected}");
-    }
+    } */
 
-    input:not(:checked) ~ label:hover,
+    /* input:not(:checked) ~ label:hover,
     input:not(:checked) ~label:hover ~ label {
         background-image: url("data:image/svg+xml; charset=UTF-8, ${Hover}");
-    }
+    } */
 `
 const Field = styled.div`
     border-radius: 4px;
@@ -70,7 +72,8 @@ const Field = styled.div`
 const Wrapper = styled.div`
     background: #fff;
     padding: 20px;
-    background: #0D6C0D;
+    /* background: #0D6C0D; */
+    background-image: url("https://st3.depositphotos.com/1028879/17671/i/1600/depositphotos_176712332-stock-photo-a-big-pile-of-marijuana.jpg");
     height: 100vh;
     padding-top: 100px;
 `
@@ -96,6 +99,7 @@ const SubmitBtn = styled.button`
 const Headline = styled.div`
     padding: 20px;
     font-size: 30px;
+    text-align: center;
     color: #fff;
     font-weight: bold;
 `
@@ -115,7 +119,7 @@ function ReviewForm({ handleChange, onAddReview , setRating}, props) {
         
         return (
         <Fragment>
-            <input  key={index} type="radio" value= {score} checked={score === score} name="rating" onChange={() => console.log('selected:', score)} id={`rating-${score}`}/>
+            {/* <input  key={index} type="radio" value= {score} checked={score === score} name="rating" onChange={() => console.log('selected:', score)} id={`rating-${score}`}/> */}
             <label></label> 
         </Fragment>
         )
