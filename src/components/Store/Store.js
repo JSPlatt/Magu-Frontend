@@ -52,6 +52,14 @@ const LinkWrapper = styled.div`
       border: 1px solid #000;
       width: 100%;
       text-decoration: none;
+
+
+      &:hover {
+        background: #fff;
+        color: #000;
+        border: 1px solid #fff;
+    }
+
   }`
 
   const LogOutBtn = styled.button`
