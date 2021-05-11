@@ -19,7 +19,7 @@ const Title = styled.div`
 
 const RatingScore = styled.div`
     display: flex;
-    font-size: 25px;
+    font-size: 17px;
     font-weight: bold;
     width: 15%;
     
@@ -29,12 +29,12 @@ const DeleteBtn = styled.button`
     color: #fff;
     background: #318231;
     border-radius: 4px;
-    padding: 12px;
-    font-size: 18px;
+    padding: 5px;
+    font-size: 15px;
     cursor: pointer;
     transition: ease-in-out 0.1s;
     border: 1px solid #fff;
-    width: 15%;
+    width: 8%;
     margin-top: 20px;
 
     &:hover {
@@ -65,7 +65,7 @@ function StoreReview({review, onDeleteReview}) {
                 <p>{review.description}</p>
             </Description>
             <RatingScore>
-                <p>{review.score} out of 5</p> 
+                <p>{review.score}/5</p> 
             </RatingScore>
             <DeleteBtn onClick={handleDelete}>Delete</DeleteBtn>
         </Card>
