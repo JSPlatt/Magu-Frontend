@@ -40,25 +40,6 @@ function StoresContainer() {
         })
     }, [])
 
-    // const [reviews, setReviews] = useState([])
-    
-    // useEffect(() => {
-
-    //     fetch('http://localhost:3001/reviews')
-    //     .then(r => r.json())
-    //     .then (reviewArray => {
-    //         setReviews(reviewArray)
-    //     })
-    // }, [])
-
-    // const revs = reviews.map( review => {
-    //     return (
-    //         <StoreCard
-    //             score={revs.score}    
-    //         />
-    //     )
-    // })
-
     const grid = stores.map( store => {
         <Store 
             logo={store.image_url}

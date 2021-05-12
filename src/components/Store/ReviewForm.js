@@ -1,53 +1,7 @@
-import React, { useState , Fragment} from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
-import Gray from './Stars/Gray'
-import Hover from './Stars/Hover'
-import Selected from './Stars/Selected'
 
 
-
-const RatingContainer = styled.div`
-    text-align: center;
-    border-radius: 4px;
-    font-size: 18px;
-    padding: 40px 0 10px 0;
-    border: 1px solid #e6e6e6;
-    background: #fff;    
-`
-const RatingBox = styled.div`
-    background: #fff;
-    display: flex;
-    justify-content: center;
-    flex-direction: row-reverse;
-    position: relative;
-    margin-top: 12px;
-
-    input {
-        display: none;
-    }
-
-    label {
-        cursor: pointer;
-        width: 40px;
-        height: 40px;
-        background-image: url("data:image/svg+xml; charset=UTF-8, ${Selected}");
-        /* background-image: url("data:image/svg+xml; charset=UTF-8, ${Gray}"); */
-        /* background-image: url("data:image/svg+xml; charset=UTF-8, ${Hover}"); */
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: 70%;
-    }
-
-    /* input:checked ~ label,
-    input:checked ~ label ~ label {
-        background-image: url("data:image/svg+xml; charset=UTF-8, ${Selected}");
-    } */
-
-    /* input:not(:checked) ~ label:hover,
-    input:not(:checked) ~label:hover ~ label {
-        background-image: url("data:image/svg+xml; charset=UTF-8, ${Hover}");
-    } */
-`
 const Field = styled.div`
     border-radius: 4px;
 
@@ -103,27 +57,12 @@ const Headline = styled.div`
     color: #fff;
     font-weight: bold;
 `
-const RatingTitle = styled.div`
-    font-size: 20px;
-    padding-bottom: 20px;
-    font-weight: bold;
-`
 
 function ReviewForm({ handleChange, onAddReview , setRating}, props) {
     const [title, setTitle] = useState("")
     const [description, setDescription] =useState("")
     const [score, setScore] =useState("")
     
-
-    const ratingOptions = [5, 4, 3, 2, 1].map ( (score,index ) => {
-        
-        return (
-        <Fragment>
-            {/* <input  key={index} type="radio" value= {score} checked={score === score} name="rating" onChange={() => console.log('selected:', score)} id={`rating-${score}`}/> */}
-            <label></label> 
-        </Fragment>
-        )
-    })
 
     function handleSubmit(e) {
         e.preventDefault()
@@ -163,12 +102,6 @@ function ReviewForm({ handleChange, onAddReview , setRating}, props) {
                     <input onChange={(e) => setScore(e.target.value)} value={score} type="number" name="score" placeholder="Review Score" min="1" max="5" required/>
                 </Field>
                 <Field>
-                    {/* <RatingContainer>
-                        <RatingTitle>Rate This Dispensary</RatingTitle>
-                        <RatingBox>
-                        {ratingOptions}  
-                        </RatingBox>
-                    </RatingContainer> */}
                 </Field>
                 <SubmitBtn type="submit">Submit Your Review!</SubmitBtn>
             </form>

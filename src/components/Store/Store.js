@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom'
 import StoreReview from './StoreReview'
 import styled from 'styled-components'
 import ReviewForm from './ReviewForm'
-import { BrowserRouter as Router, Link } from 'react-router-dom'
+import {  Link } from 'react-router-dom'
 
 const Header = styled.div `
   padding: 100px 100px 10px 100px;
@@ -128,10 +128,6 @@ const reviewGrid = reviews.map( review => {
     })
     
     
-    // const setRating = (score, e); e => {
-    //     e.preventDefault()  
-    //     setReviews({ ...reviews, score })
-    //   }
 
     
        return (
@@ -150,7 +146,6 @@ const reviewGrid = reviews.map( review => {
                <Column>
                    <ReviewForm
                         onAddReview={handleAddReview}   
-                        // setRating={setRating}
                     />
                </Column>
            </Wrapper>

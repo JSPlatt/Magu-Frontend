@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import "../Login.css";
 import { Redirect } from "react-router-dom";
 import styled from 'styled-components'
 
@@ -140,7 +139,7 @@ class Login extends Component {
                 onChange={this.handleFormChange}
                 placeholder="Enter Password"
               />
-              <input type="checkbox"/>You must be 21 years of age or older to view this site.
+              <input type="checkbox" required/>You must be 21 years of age or older to view this site.
               <LogInButton type="submit">SUBMIT</LogInButton>
             </div>
           </Field>
